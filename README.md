@@ -10,7 +10,7 @@ awk '{s++}END{print s/4}' file.fastq
 zcat file.fastq.gz | echo $((`wc -l`/4))
 
 ### Rename many files
-for i in *NAME*; do mv $i ${i/NAME/NEW_NAME}; done;
+for i in *NAME*; do mv $i ${i/NAME/NEW_NAME}; done; <br />
 for i in *fastq; do mv $i ${i/R1/1}; done;
 
 ### Contact 
