@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 
 inFile = open(sys.argv[1],'r')
