@@ -1,5 +1,10 @@
-# Useful scripts
+## Useful scripts
 
-# GFF3 to GTF 
+### GFF3 to GTF 
+python gff-to-gtf_standard.py file.gff3 >file.gtf
 
-python gff-to-gtf_standard.py
+### GFF from prodigal to GTF
+python gff_to_gtf_prodigal.py prodigal.gff prodigal.gtf
+
+### GTF to GFF
+python gtf-to-gff_standard.py file.gtf >file.gff
