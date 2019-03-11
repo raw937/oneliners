@@ -22,13 +22,13 @@ find . -name "*.gff" -type f -exec cp {} ./. \;
 ## SAMTOOLS
 
 ### Convert Bam to Unmapped (bam)
-samtools view -b -f 4 file.bam file_unmapped.bam
+samtools view -b -f 4 file.bam >file_unmapped.bam
 
 ### Convert Bam to Mapped (bam)
-samtools view -b -F 4 file.bam file_mapped.bam
+samtools view -b -F 4 file.bam >file_mapped.bam
 
 ### Convert Bam to fastq
-samtools fastq file.bam file.fastq
+samtools fastq file.bam >file.fastq
 
 ### Contact 
 The point-of-contact for this project is [Dr. Richard Allen White III](https://github.com/raw937).<br />
