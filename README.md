@@ -1,5 +1,12 @@
 ## Useful one-liners for computational biology
 
+### Remove contigs based on header (after transform to single line)
+grep -A1 -f list_of_scf_to_filter out.fa >rmfile.fasta
+grep -v -f rmfile.fasta out.fa >out2.fa
+
+### Convert multi-line fasta to a single line fasta (contig files)
+awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < file.fa > out.fa
+
 ### Convert csv to tsv 
 sed -E 's/("([^"]*)")?,/\2\t/g' file.csv >> file.tsv
 
