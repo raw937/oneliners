@@ -28,6 +28,12 @@
 
 ## SAMTOOLS
 
+### Convert Sam to Unmapped (sam)
+`samtools view -S -f 4 file.bam >file_unmapped.sam`
+
+### Convert Sam to Mapped (bam)
+`samtools view -S -F 4 file.bam >file_mapped.bam`
+
 ### Convert Bam to Unmapped (bam)
 `samtools view -b -f 4 file.bam >file_unmapped.bam`
 
