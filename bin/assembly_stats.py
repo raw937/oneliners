@@ -5,7 +5,7 @@
    [Total # of Contigs > Average Gene Size]
    This code creates an output.txt file with all of the statistics
    Usage: python assembly_stats.py <assembly.fasta> <minimum contig size> <estimated genome size> <average gene size>
-   Author: Nicolas Schmelling
+   Author: RAWIII
 '''
 
 from __future__ import division
