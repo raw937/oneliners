@@ -51,11 +51,11 @@
 ### Map paired end/single end (.fq, .fastq, .gz)
 
 #### Global 
-`bowtie2 -p number of threads -x db -1 R1.fastq -2 R2.fastq -S global.sam --very-sensitive`  
+`bowtie2 -p number of threads -x db -1 R1.fastq -2 R2.fastq -S global.sam --very-sensitive`<br/>  
 `bowtie2 -p number of threads -x db -q R1.fastq -S global.sam --very-sensitive` 
 
 #### Local
-`bowtie2 -p number of threads -x db -1 1.fastq -2 2.fastq -S local.sam --very-sensitive-local` 
+`bowtie2 -p number of threads -x db -1 1.fastq -2 2.fastq -S local.sam --very-sensitive-local` <br/>
 `bowtie2 -p number of threads -x db -q R1.fastq -S local.sam --very-sensitive-local` 
 
 ### Tree annotator 
