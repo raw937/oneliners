@@ -43,8 +43,24 @@
 ### Convert Bam to fastq
 `samtools fastq file.bam >file.fastq`
 
+## Bowtie2 
+
+### Build Bowtie2 db
+`bowtie2-build database.fa db` 
+
+### Map paired end/single end (.fq, .fastq, .gz)
+
+#### Global 
+`bowtie2 -p number of threads -x db -1 R1.fastq -2 R2.fastq -S global.sam --very-sensitive`  
+`bowtie2 -p number of threads -x db -q R1.fastq -S global.sam --very-sensitive` 
+
+#### Local
+`bowtie2 -p number of threads -x db -1 1.fastq -2 2.fastq -S local.sam --very-sensitive-local` 
+`bowtie2 -p number of threads -x db -q R1.fastq -S local.sam --very-sensitive-local` 
+
 ### Tree annotator 
 `tree_annotator.py annotation.csv treefile output`
+
 
 ### Contact 
 The point-of-contact for this project is [Dr. Richard Allen White III](https://github.com/raw937).<br />
