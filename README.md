@@ -26,6 +26,9 @@
 ### Copy many files from many directories
 `find . -name "*.gff" -type f -exec cp {} ./. \;`
 
+### Convert Sam to fastq
+cat file.sam | grep -v ^@ | awk '{print "@"$1"\n"$10"\n+\n"$11}' > file.fastq
+
 ## SAMTOOLS
 
 ### Convert Sam to Unmapped (sam)
