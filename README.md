@@ -20,6 +20,15 @@
 `for i in *NAME*; do mv $i ${i/NAME/NEW_NAME}; done;` <br />
 `for i in *fastq; do mv $i ${i/R1/1}; done;`
 
+### Remove spaces in a fasta file
+`sed -r ‘s/\s+//g’`
+
+### Make uppercase text in a fasta file
+`sed 's/[a-z]/\U&/g'`
+
+### Make lowercase text in a fasta file
+`sed 's/[A-Z]/\L&/g'`
+
 ### Add a tab after the first space
 `sed 's/^[ ]*\([^ ]*\) /\1\t/' file.txt >New_file.txt`
 
