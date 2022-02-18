@@ -1,5 +1,12 @@
 ## Useful one-liners for computational biology
 
+### Convert multiline fasta to single line 
+perl -pe '/^>/ ? print "\n" : chomp' multi-line.fasta >single-line.fasta (adds a line)
+awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < multi-line.fasta >single-line.fasta (adds a line)
+perl -pe 'chomp unless /^>/' multi-line.fasta >single-line.fasta
+awk '/^>/ { if(NR>1) print "";  printf("%s\n",$0); next; } { printf("%s",$0);}  END {printf("\n");}' < multi-line.fasta >single-line.fasta 
+awk 'BEGIN{RS=">"}NR>1{sub("\n","\t"); gsub("\n",""); print RS$0}' < multi-line.fasta >single-line.fasta 
+
 ### Remove contigs based on header (after transform to single line)
 `grep -A1 -f list_of_scf_to_filter out.fa >rmfile.fasta` <br/>
 `grep -v -f rmfile.fasta out.fa >out2.fa`
