@@ -1,10 +1,15 @@
 ## Useful one-liners for computational biology
 
 ### Convert multiline fasta to single line 
+
+### Command 1
 ```
 perl -pe '/^>/ ? print "\n" : chomp' multi-line.fasta >single-line.fasta
 ``` 
-`awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < multi-line.fasta >single-line.fasta` <br/>
+
+```
+awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < multi-line.fasta >single-line.fasta
+``` 
 `perl -pe 'chomp unless /^>/' multi-line.fasta >single-line.fasta` <br/>
 `awk '/^>/ { if(NR>1) print "";  printf("%s\n",$0); next; } { printf("%s",$0);}  END {printf("\n");}' < multi-line.fasta >single-line.fasta` <br/>
 `awk 'BEGIN{RS=">"}NR>1{sub("\n","\t"); gsub("\n",""); print RS$0}' < multi-line.fasta >single-line.fasta` <br/>
