@@ -1,4 +1,4 @@
-## Useful one-liners for computational biology
+# Useful one-liners for computational biology
 
 ## Convert 
 
@@ -43,6 +43,16 @@ awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}'
 ### Convert csv to tsv 
 ```
 sed -E 's/("([^"]*)")?,/\2\t/g' file.csv >> file.tsv
+```
+
+### Convert Sam to fastq
+```
+cat file.sam | grep -v ^@ | awk '{print "@"$1"\n"$10"\n+\n"$11}' > file.fastq
+```
+
+### Copy many files from many directories
+```
+find . -name "*.gff" -type f -exec cp {} ./. \;
 ```
 
 ## Count 
@@ -110,16 +120,6 @@ sed 's/[A-Z]/\L&/g'
 sed 's/^[ ]*\([^ ]*\) /\1\t/' file.txt >New_file.txt
 ```
 
-### Copy many files from many directories
-```
-find . -name "*.gff" -type f -exec cp {} ./. \;
-```
-
-### Convert Sam to fastq
-```
-cat file.sam | grep -v ^@ | awk '{print "@"$1"\n"$10"\n+\n"$11}' > file.fastq
-```
-
 ## SAMTOOLS
 
 ### Convert Sam to Unmapped (sam)
@@ -185,7 +185,9 @@ bowtie2 -p number of threads -x db -q R1.fastq -S local.sam --very-sensitive-loc
 ## Phylogenetics
 
 ### Tree annotator 
-`tree_annotator.py annotation.csv treefile output`
+```
+tree_annotator.py annotation.csv treefile output
+```
 
 
 ### Contact 
