@@ -2,6 +2,19 @@
 
 ## Convert 
 
+### Convert fastq to fasta
+
+#### Option 1
+```
+sed -n '1~4s/^@/>/p;2~4p' file.fastq >file.fasta
+```
+
+#### Option 2
+```
+sed '/^@/!d;s//>/;N' file.fastq >file.fasta
+```
+
+
 ### Convert multiline fasta to single line 
 
 #### Option 1
