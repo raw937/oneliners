@@ -1,10 +1,6 @@
 ## Useful one-liners for computational biology
 
 ### Convert multiline fasta to single line 
-Extract fields 2, 4, and 5 from file.txt:
-
-awk '{print $2,$4,$5}' input.txt
-    
 ```perl -pe '/^>/ ? print "\n" : chomp' multi-line.fasta >single-line.fasta``` <br/>
 `awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < multi-line.fasta >single-line.fasta` <br/>
 `perl -pe 'chomp unless /^>/' multi-line.fasta >single-line.fasta` <br/>
