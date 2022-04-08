@@ -1,4 +1,5 @@
 #AUTHOR: Nicolas Schmelling 
+#DATE: 2014
 
 '''
    Calculation of [Total # of Contigs], [Total Length], [Total # of trimmed Contigs], [Trimmed Length], [GC content],
