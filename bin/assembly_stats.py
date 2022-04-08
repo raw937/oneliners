@@ -1,5 +1,6 @@
 #AUTHOR: Nicolas Schmelling 
 #DATE: 2014
+#REVISIED: 2018 (Dr. Richard Allen White III)
 
 '''
    Calculation of [Total # of Contigs], [Total Length], [Total # of trimmed Contigs], [Trimmed Length], [GC content],
