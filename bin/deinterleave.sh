@@ -21,9 +21,9 @@ Deinterleaves a FASTQ file of paired reads
 
 Usage:
 
-    cat <in.fastq> | deinterleave.sh <out1.fq> <out2.fq>
+    cat <in.fastq> | deinterleave.sh <output1.fastq> <output2.fastq>
     
-    zcat <in.fq.gz> | deinterleave.sh <out1.fq> <out2.fq>
+    zcat <in.fq.gz> | deinterleave.sh <output1.fq> <output2.fq>
     
     samtools bam2fq -ns singles.fq <in.bam> \\
     | deinterleave.sh <out1.fq> <out2.fq>"

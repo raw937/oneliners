@@ -1,5 +1,7 @@
-
 #!/usr/bin/env python
+
+
+# Import libraries
 import random
 import sys
 import optparse
