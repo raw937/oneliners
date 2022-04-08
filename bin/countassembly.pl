@@ -1,7 +1,13 @@
 #!/usr/bin/perl -w
+
 # assembly stat
 # AUTHOR: Joseph Fass (modified from script by Brad Sickler and Dr. Richard Allen White III)
 # LAST REVISED: Aug 2018
+
+# The Bioinformatics Core at UC Davis Genome Center
+# http://bioinformatics.ucdavis.edu
+# Copyright (c) 2009 The Regents of University of California, Davis Campus.
+# All rights reserved.
 
 use strict;
 use POSIX;
