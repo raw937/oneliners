@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 #AUTHOR: Nicolas Schmelling 
 #DATE: 2014
 #REVISIED: 2018 - Dr. Richard Allen White III
