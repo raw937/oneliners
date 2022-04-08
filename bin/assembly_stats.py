@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+
+#AUTHOR: Nicolas Schmelling 
+#DATE: 2014
+#REVISIED: 2018 - Dr. Richard Allen White III
+
 '''
    Calculation of [Total # of Contigs], [Total Length], [Total # of trimmed Contigs], [Trimmed Length], [GC content],
    [Min Contig Size [bp]], [Median Contig Size [bp]], [Mean Contig Size [bp]], [Max Contig Size [bp]],
@@ -5,7 +11,6 @@
    [Total # of Contigs > Average Gene Size]
    This code creates an output.txt file with all of the statistics
    Usage: python assembly_stats.py <assembly.fasta> <minimum contig size> <estimated genome size> <average gene size>
-   Author: RAWIII
 '''
 
 from __future__ import division
