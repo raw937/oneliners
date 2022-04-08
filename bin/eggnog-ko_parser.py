@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
+#AUTHOR: Dr. Richard Allen White III
+#REVISED: 2022
+
+# Import libraries
 import argparse
 import csv
-# import json
 import os
 import re
 
