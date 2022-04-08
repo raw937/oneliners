@@ -1,4 +1,7 @@
 #!/usr/bin/env perl
+#AUTHOR:  David E. Condon 
+#REVISED: Dr. Richard Allen White III
+#LAST REVISION: 2018
 
 use strict; use warnings;
 use Cwd 'getcwd';
