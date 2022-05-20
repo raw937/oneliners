@@ -197,11 +197,34 @@ bowtie2 -p number of threads -x db -q R1.fastq -S local.sam --very-sensitive-loc
 
 ## Phylogenetics
 
+### MAFFT
+
+#### Local
+```
+mafft --localpair --maxiterate 1000 --clustalout file.fasta >file_local.clust
+```
+
+#### Global
+```
+mafft --globalpair --maxiterate 1000 --clustalout file.fasta >file_global.clust
+```
+
+### IQ-Tree2
+
+#### Protein based Tree
+```
+iqtree2 -s file_local.clust -st PRO -m TEST -bb 1000 -alrt 1000
+```
+
+#### Nucleotide (DNA) based Tree
+```
+iqtree2 -s file_local.clust -st DNA -m TEST -bb 1000 -alrt 1000
+```
+
 ### Tree annotator 
 ```
 tree_annotator.py annotation.csv treefile output
 ```
-
 
 ### Contact 
 The point-of-contact for this project is [Dr. Richard Allen White III](https://github.com/raw937).<br />
