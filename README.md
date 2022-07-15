@@ -68,6 +68,12 @@ cat file.sam | grep -v ^@ | awk '{print "@"$1"\n"$10"\n+\n"$11}' > file.fastq
 find . -name "*.gff" -type f -exec cp {} ./. \;
 ```
 
+### Split with file name
+```
+split -d -a1 -b 10M --additional-suffix=.tsv metadata.tsv metadata
+split -d -a1 -b 10M --additional-suffix=.fna seq.fna seq
+```
+
 ## Count 
 
 ### AWK for rapid fastq read count
@@ -227,7 +233,7 @@ tree_annotator.py annotation.csv treefile output
 ```
 
 ### Contact 
-The point-of-contact for this project is [Dr. Richard Allen White III](https://github.com/raw937).<br />
+The point-of-contact for this project is [Dr. Richard Allen White III](https://github.com/raw-lab/).<br />
 If you have any questions or feedback, please feel free to get in touch by email. 
-Dr. Richard Allen White III - raw937@gmail.com.  <br />
-Or [open an issue](https://github.com/raw937/Useful-one-liners-for-computational/issues).
+Dr. Richard Allen White III - raw937@gmail.com or rwhit101@uncc.edu  <br />
+Or [open an issue](https://github.com/raw-lab/oneliners/issues).
