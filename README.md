@@ -124,6 +124,11 @@ for i in *NAME*; do mv $i ${i/NAME/NEW_NAME}; done;
 sed -r ‘s/\s+//g’
 ```
 
+### Remove empty lines
+```
+sed '/^$/d' 
+```
+
 ### Make uppercase text in a fasta file
 ```
 sed 's/[a-z]/\U&/g'
