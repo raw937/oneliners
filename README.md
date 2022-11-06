@@ -42,6 +42,11 @@ awk '/^>/ { if(NR>1) print "";  printf("%s\n",$0); next; } { printf("%s",$0);}  
 awk 'BEGIN{RS=">"}NR>1{sub("\n","\t"); gsub("\n",""); print RS$0}' < multi-line.fasta >single-line.fasta
 ```
 
+#### Option 6
+```
+perl -pe '$. > 1 and /^>/ ? print "\n" : chomp' multi-line.fasta >single-line.fasta
+```
+
 ### Remove contigs based on header (after transform to single line)
 ```
 grep -A1 -f list_to_filter contigs.fasta >rm_contigs.fasta
