@@ -229,7 +229,7 @@ mafft --globalpair --maxiterate 1000 --clustalout file.fasta >file_global.clust
 
 #### Protein based Tree
 ```
-iqtree2 -s file_local.clust -st PRO -m TEST -bb 1000 -alrt 1000
+iqtree2 -s file_local.clust -st AA -m TEST -bb 1000 -alrt 1000
 ```
 
 #### Nucleotide (DNA) based Tree
