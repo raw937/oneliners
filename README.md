@@ -79,6 +79,12 @@ split -d -a1 -b 10M --additional-suffix=.tsv metadata.tsv metadata
 split -d -a1 -b 10M --additional-suffix=.fna seq.fna seq
 ```
 
+### Basename regular expressions
+```
+for i in *fna; do echo command "$i" $(basename $i | sed 's/_ViralMultiSegProj[0-9]\{5\}_genomic.fna//' | sed 's/_ViralMultiSegProj[0-9]\{6\}_genomic.fna//' | sed 's/_ASM[0-9]\{6\}v1_genomic.fna//' | sed 's/_ASM[0-9]\{7\}v1_genomic.fna//' | sed 's/_ASM[0-9]\{6\}v3_genomic.fna//' )/ >>split.sh; done
+```
+
+
 ## Count 
 
 ### AWK for rapid fastq read count
