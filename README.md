@@ -14,6 +14,10 @@ sed -n '1~4s/^@/>/p;2~4p' file.fastq >file.fasta
 sed '/^@/!d;s//>/;N' file.fastq >file.fasta
 ```
 
+#### Option 3
+```
+awk '/^@/{gsub(/^@/,">",$1);print;getline;print}' file.fastq >file.fna
+```
 
 ### Convert multiline fasta to single line 
 
@@ -84,7 +88,6 @@ split -d -a1 -b 10M --additional-suffix=.fna seq.fna seq
 for i in *fna; do echo command "$i" $(basename $i | sed 's/_ViralMultiSegProj[0-9]\{5\}_genomic.fna//' | sed 's/_ViralMultiSegProj[0-9]\{6\}_genomic.fna//' | sed 's/_ASM[0-9]\{6\}v1_genomic.fna//' | sed 's/_ASM[0-9]\{7\}v1_genomic.fna//' | sed 's/_ASM[0-9]\{6\}v3_genomic.fna//' )/ >>split.sh; done
 ```
 
-
 ## Count 
 
 ### AWK for rapid fastq read count
@@ -127,8 +130,14 @@ grep "@" file.fastq | wc -l
 ```
 for i in *NAME*; do mv $i ${i/NAME/NEW_NAME}; done;
 ```
+## BioAWK Commands
 
 ## SED Commands
+
+### Convert fastq to fna
+```
+sed -n '1~4s/^@/>/p;2~4p' file.fastq >file.fna
+```
 
 ### Remove spaces in a fasta file
 ```
