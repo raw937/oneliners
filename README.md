@@ -51,6 +51,13 @@ awk 'BEGIN{RS=">"}NR>1{sub("\n","\t"); gsub("\n",""); print RS$0}' < multi-line.
 perl -pe '$. > 1 and /^>/ ? print "\n" : chomp' multi-line.fasta >single-line.fasta
 ```
 
+### Change the headers of a fasta file with names within a list (names.txt)
+```
+paste <(ls *.faa) names.txt | while read -r file name; do
+  echo "sed -E 's/^>(.*)$/>'\"${name}_\1/\" \"$file\" > \"$(basename "$file" .faa)_re.faa\""
+done >> headers.sh
+```
+
 ### Remove contigs based on header (after transform to single line)
 ```
 grep -A1 -f list_to_filter contigs.fasta >rm_contigs.fasta
